@@ -1,0 +1,370 @@
+/* src/styles.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.app-layout {
+  display: flex;
+}
+
+.app-title {
+  margin: 20px;
+  font-size: 24px;
+}
+
+.sidebar {
+  text-align: center;
+  width: 250px;
+  height: 100vh;
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  padding-top: 45px;
+  position: fixed; /* Fixed sidebar */
+  transition: all 0.3s; /* Smooth transition */
+}
+
+.content-area {
+  margin-left: 250px; /* Margin to prevent overlap */
+  padding: 20px;
+  flex-grow: 1;
+  height: 100vh; /* Full height */
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  text-align: "center";
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  display: block; /* Makes the entire area clickable */
+  border-radius: 0.2rem;
+}
+
+.sidebar ul li a:hover {
+  background-color: #3c4043; /* Change background on hover */
+}
+
+.sidebar ul li a.active {
+  background-color: #ff325f; /* Highlight active link */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width for small screens */
+    height: auto; /* No fixed height */
+    position: relative; /* Position relative for flow */
+  }
+
+  .content-area {
+    margin-left: 0; /* No margin on small screens */
+  }
+}
+
+/* User Directory styles */
+.user-directory {
+  max-height: 95%;
+  height: 95%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.user-directory h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #ff325f; /* Attractive bottom border */
+  padding-bottom: 10px;
+}
+
+.table-container {
+  overflow-x: auto; /* Responsive table */
+  overflow-y: auto;
+  height: 90%;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Light border */
+}
+
+.user-table th {
+  background-color: #f4f4f4; /* Header background */
+  color: #555;
+  font-weight: bold;
+  position: sticky;
+  top: 0; /* Sticky header */
+  z-index: 10; /* Ensure it stays above other rows */
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1; /* Row hover effect */
+}
+
+.user-table td {
+  background-color: #ffffff; /* Cell background */
+  color: #333;
+  text-transform: capitalize;
+}
+
+.user-directory p {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Register User styles */
+.register-user {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  position: relative;
+}
+
+.register-user h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #ff325f; /* Attractive bottom border */
+  padding-bottom: 10px;
+}
+
+.register-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.login {
+  max-width: 30%;
+  width: 30%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Input and Textarea Styles */
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Textarea Styles */
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 100px; /* Minimum height for textarea */
+}
+
+/* Select Styles */
+.form-group select {
+  padding: 10px; /* Padding for the select element */
+  border: 1px solid #ccc; /* Border for the select element */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  background-color: #fff; /* Background color */
+  appearance: none; /* Remove default styling */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" fill="%23aaa"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat; /* No repeat for the arrow */
+  background-position: right 10px center; /* Position of the arrow */
+  background-size: 10px; /* Size of the arrow */
+}
+
+/* Option Styles */
+.form-group select option {
+  padding: 10px; /* Padding for options */
+  font-size: 16px; /* Font size for options */
+}
+
+/* Submit Button Styles */
+.submit-button {
+  grid-column: span 2; /* Span button across two columns */
+  padding: 10px 15px;
+  background-color: #ff325f; /* Submit button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reg-button {
+  grid-column: span 2; /* Span button across two columns */
+  padding: 10px 15px;
+  background-color: #282c34; /* Submit button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure it's above other content */
+}
+
+.submit-button:hover {
+  background-color: #f6496e; /* Darker shade on hover */
+}
+
+.reg-button:hover {
+  background-color: #32363c; /* Darker shade on hover */
+}
+
+.register-method {
+  grid-column: span 2; /* Span the radio buttons across two columns */
+  display: flex; /* Use flex for better layout of radio buttons */
+  align-items: center; /* Center align items vertically */
+}
+
+.radio-group {
+  display: flex; /* Align radio buttons horizontally */
+  gap: 15px; /* Space between the radio buttons */
+}
+
+/* src/components/ContextMenu.css */
+.context-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.context-menu-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.context-menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.dashboard-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+}
+
+.dashboard-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.dashboard-card p {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: #007bff;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-around;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+}
+
+.dashboard-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.dashboard-card p {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.dashboard-chart {
+  margin-top: 5rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 50%; /* Adjusted size */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  max-width: 800px; /* Limit the maximum size */
+}
